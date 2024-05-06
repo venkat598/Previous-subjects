@@ -1,0 +1,7 @@
+strain: -1.5 En_exy: -2794.45414849 En_exyz: -2790.72359981 En_vxyz: -2796.99107566 Vol_Bulk: 3490.47
+strain: -1.0 En_exy: -2796.47070155 En_exyz: -2794.78355800 En_vxyz: -2797.58297508 Vol_Bulk: 3490.47
+strain: -0.5 En_exy: -2797.66390570 En_exyz: -2797.20572008 En_vxyz: -2797.94049383 Vol_Bulk: 3490.47
+strain: 0.0 En_exy: -2798.07314046 En_exyz: -2798.07314046 En_vxyz: -2798.07314045 Vol_Bulk: 3490.47
+strain: +0.5 En_exy: -2797.72411183 En_exyz: -2797.44151981 En_vxyz: -2797.97538020 Vol_Bulk: 3490.47
+strain: +1.0 En_exy: -2796.65315898 En_exyz: -2795.38176919 En_vxyz: -2797.64557608 Vol_Bulk: 3490.47
+strain: +1.5 En_exy: -2794.88288372 En_exyz: -2791.96090873 En_vxyz: -2797.06733487 Vol_Bulk: 3490.47

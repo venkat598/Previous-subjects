@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#PBS -S /bin/bash
+#PBS -N accelerate 
+#PBS -l select=1:ncpus=16:mpiprocs=1:ngpus=1:gpu_model=a100:mem=64gb:interconnect=hdr,walltime=272:00:00
+#PBS -q muexe
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+export OMP_NUM_THREADS=16
+export NO_STOP_MESSAGE=1
+
+#module purge
+#module add lammps/20200505-gcc/8.3.1-cuda10_2-kokkos-mpi-nvidia_V-openmp-user-omp
+
+#module add cuda/10.2.89-gcc/8.3.1
+#module add openmpi/3.1.6-gcc/8.3.1-cuda10_2-ucx
+#module add fftw/3.3.8-gcc/8.3.1-cuda10_2-mpi
+#module add quantum-espresso/6.8.V
+
+#module add quantum-espresso/6.5-gcc/8.3.1-mpi-cuda10_2
+
+module use /software/commercial/vasp/vasp_es/modulefiles/
+module load vasp.6.2.1-vtst-openacc
+
+
+#mpirun -np 2 ./lmp_kokkos_cuda_mpi -sf gpu -in convert_to_HEA.in        # 8 MPI, 8 MPI/GPU
+#mpirun -np 2 ./lmp_kokkos_cuda_mpi -kokkos on g 1 -in convert_to_HEA.in        # 8 MPI, 8 MPI/GPU
+#mpirun -np 16 ./lmp_kokkos_cuda_mpi -in in.S-L-HEA        # 8 MPI, 8 MPI/GPU
+mpirun -np 1 vasp_std
